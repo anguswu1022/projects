@@ -120,20 +120,22 @@ def switch_player():
     else:
         current_player = "O"
 
-
+# Checks for a win or tie in the game
 def game_state():
     check_win()
     check_tie()
 
-
+# Function for the tictactoe game
 def tictactoe():
     print_board()
 
+    # Calls the functions as the game is going on
     while ongoing_game:
         player_turn(current_player)
         switch_player()
         game_state()
 
+    # Identifies the winner or if the game was a tie
     if winner == "O" or winner == "X":
         print("Player " + winner + " is the winner.")
     elif winner is None:
